@@ -171,6 +171,13 @@ app.use('/profile', requireAuth, userRoutes);
 const searchRoutes = require('./routes/search');
 app.use('/search', requireAuth, searchRoutes);
 
+const studentRoutes = require('./routes/student');
+app.use('/student', studentRoutes);
+
+const labtechRoutes = require('./routes/labtech');
+app.use('/labtech', labtechRoutes);
+
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).render('error', { 
